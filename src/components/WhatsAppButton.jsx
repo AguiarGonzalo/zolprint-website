@@ -2,18 +2,25 @@ import React from 'react';
 import { MessageCircle } from 'lucide-react';
 
 const WhatsAppButton = () => {
-    return (
-        <a
-            href="https://wa.me/972533511199"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="whatsapp-float"
-            aria-label="Chat on WhatsApp"
-        >
-            <MessageCircle size={32} />
-            <span className="tooltip">דברו איתנו בוואטסאפ</span>
+  const phoneNumber = '972523511199'; // Corrected number
+  const message = 'היי זול פרינט, אשמח לקבל פרטים נוספים';
 
-            <style jsx>{`
+  const handleClick = () => {
+    window.open(`https://api.whatsapp.com/send/?phone=${phoneNumber}&text=${encodeURIComponent(message)}&type=phone_number&app_absent=0`, '_blank');
+  };
+
+  return (
+    <a
+      onClick={handleClick}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="whatsapp-float"
+      aria-label="Chat on WhatsApp"
+    >
+      <MessageCircle size={32} />
+      <span className="tooltip">דברו איתנו בוואטסאפ</span>
+
+      <style jsx>{`
         .whatsapp-float {
           position: fixed;
           bottom: 20px;
@@ -63,8 +70,8 @@ const WhatsAppButton = () => {
           100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
       `}</style>
-        </a>
-    );
+    </a>
+  );
 };
 
 export default WhatsAppButton;
