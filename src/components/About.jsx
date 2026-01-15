@@ -117,6 +117,7 @@ const About = () => {
           line-height: 1.8;
           color: #555;
           font-size: 1.1rem;
+          text-wrap: balance;
         }
 
         .stats-grid {
