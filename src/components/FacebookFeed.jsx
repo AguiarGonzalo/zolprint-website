@@ -5,7 +5,7 @@ const FacebookFeed = () => {
     <div className="facebook-feed-wrapper">
       <div className="text-content">
         <h3 style={{ fontSize: '1.8rem', marginBottom: '0.5rem', color: 'var(--color-secondary)' }}>עקבו אחרינו בפייסבוק</h3>
-        <p style={{ marginBottom: '2rem', color: 'var(--color-text-light)' }}>עדכונים שוטפים, מבצעים ועבודות נבחרות.</p>
+        <p style={{ marginBottom: '0.5rem', color: 'var(--color-text-light)' }}>עדכונים שוטפים, מבצעים ועבודות נבחרות.</p>
       </div>
 
       <div className="iframe-container">
