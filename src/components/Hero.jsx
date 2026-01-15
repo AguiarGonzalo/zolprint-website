@@ -14,7 +14,7 @@ const Hero = () => {
         </div>
         <p className="subtitle">דפוס דיגיטלי, העתקות אור, אופסט ועיצוב גרפי ברמה הגבוהה ביותר.</p>
         <div className="cta-group">
-          <a href="#architects" className="btn btn-primary">
+          <a href="#architects" className="btn btn-white">
             למערכת הזמנות אדריכלים
             <ArrowRight size={20} style={{ marginRight: '0.5rem' }} />
           </a>
@@ -42,9 +42,12 @@ const Hero = () => {
         .hero-content {
           position: relative;
           z-index: 10;
-          text-align: right;
+          text-align: center;
           max-width: 850px;
           padding-top: 2rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
         }
 
         .hero-brand {
@@ -52,7 +55,7 @@ const Hero = () => {
             animation: fadeInUp 0.8s ease-out;
             width: 100%;
             display: flex;
-            justify-content: flex-end;
+            justify-content: center;
         }
 
         .hero-image {
@@ -76,7 +79,19 @@ const Hero = () => {
         .cta-group {
           display: flex;
           gap: 1.5rem;
+          justify-content: center;
           animation: fadeInUp 0.8s ease-out 0.4s backwards;
+        }
+
+        .btn-white {
+          background: white;
+          color: #27ace4;
+          box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        .btn-white:hover {
+          background: #f0f0f0;
+          transform: translateY(-3px) scale(1.02);
+          box-shadow: 0 15px 30px rgba(0,0,0,0.15);
         }
 
         /* Abstract Floating Shapes */
