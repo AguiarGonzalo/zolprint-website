@@ -2,105 +2,130 @@ import React from 'react';
 import { ArrowRight } from 'lucide-react';
 
 const Hero = () => {
-    return (
-        <section className="hero">
-            <div className="container hero-content">
-                <h1>
-                    כל פתרונות הדפוס<br />
-                    <span className="highlight">במקום אחד</span>
-                </h1>
-                <p className="subtitle">דפוס דיגיטלי, העתקות אור, אופסט ועיצוב גרפי ברמה הגבוהה ביותר.</p>
-                <div className="cta-group">
-                    <a href="#architects" className="btn btn-primary">
-                        למערכת הזמנות אדריכלים
-                        <ArrowRight size={20} style={{ marginRight: '0.5rem' }} />
-                    </a>
-                    <a href="#services" className="btn btn-accent">השירותים שלנו</a>
-                </div>
-            </div>
+  return (
+    <section className="hero">
+      <div className="container hero-content">
+        <h1 className="hero-title">
+          כל פתרונות הדפוס<br />
+          <span className="highlight">במקום אחד</span>
+        </h1>
+        <p className="subtitle">דפוס דיגיטלי, העתקות אור, אופסט ועיצוב גרפי ברמה הגבוהה ביותר.</p>
+        <div className="cta-group">
+          <a href="#architects" className="btn btn-primary">
+            למערכת הזמנות אדריכלים
+            <ArrowRight size={20} style={{ marginRight: '0.5rem' }} />
+          </a>
+          <a href="#services" className="btn btn-accent">השירותים שלנו</a>
+        </div>
+      </div>
 
-            <div className="hero-shape"></div>
+      {/* Abstract Background Shapes */}
+      <div className="shape shape-1"></div>
+      <div className="shape shape-2"></div>
+      <div className="shape shape-3"></div>
 
-            <style jsx>{`
+      <style jsx>{`
         .hero {
           position: relative;
-          height: 600px; /* Reduced height, was 800px or 90vh */
+          min-height: 700px;
           display: flex;
           align-items: center;
           overflow: hidden;
-          background: linear-gradient(135deg, #f8f9fa 0%, #e6f7fc 100%);
+          /* Premium Mesh Gradient */
+          background-color: #f8f9fa;
+          background-image: 
+            radial-gradient(at 100% 0%, rgba(0,174,239,0.1) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, rgba(196,214,0,0.15) 0px, transparent 50%);
         }
 
         .hero-content {
           position: relative;
-          z-index: 2;
+          z-index: 10;
           text-align: right;
-          max-width: 800px;
+          max-width: 850px;
+          padding-top: 2rem;
         }
 
-        h1 {
-          font-size: 4rem;
-          font-weight: 900;
-          line-height: 1.1;
-          margin-bottom: 1.5rem;
-          color: var(--color-secondary);
+        .hero-brand {
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease-out;
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
         }
 
-        .highlight {
-          color: var(--color-primary);
-          position: relative;
-          display: inline-block;
+        .hero-image {
+            max-width: 800px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
         }
-        
-        /* Underline effect */
-        .highlight::after {
-          content: '';
-          position: absolute;
-          bottom: 10px;
-          right: 0;
-          width: 100%;
-          height: 20px;
-          background-color: rgba(196, 214, 0, 0.4); /* Lime accent transparent */
-          z-index: -1;
-          transform: skewX(-20deg);
-        }
+
+
 
         .subtitle {
-          font-size: 1.5rem;
-          color: var(--color-text-light);
-          margin-bottom: 2.5rem;
-          max-width: 600px;
+          font-size: 1.6rem;
+          color: #555;
+          margin-bottom: 3rem;
+          max-width: 650px;
+          font-weight: 400;
+          animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
 
         .cta-group {
           display: flex;
-          gap: 1rem;
+          gap: 1.5rem;
+          animation: fadeInUp 0.8s ease-out 0.4s backwards;
         }
 
-        .hero-shape {
+        /* Abstract Floating Shapes */
+        .shape {
           position: absolute;
-          top: 0;
-          left: 0;
-          width: 50%;
-          height: 100%;
-          background-color: var(--color-primary);
-          clip-path: polygon(0 0, 100% 0, 80% 100%, 0% 100%);
-          opacity: 0.1;
+          border-radius: 50%;
+          filter: blur(80px);
           z-index: 1;
+          animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-1 {
+          width: 500px;
+          height: 500px;
+          background: rgba(0, 174, 239, 0.08);
+          top: -100px;
+          left: -100px;
+          animation-delay: 0s;
+        }
+
+        .shape-2 {
+          width: 400px;
+          height: 400px;
+          background: rgba(196, 214, 0, 0.1);
+          bottom: -50px;
+          right: -50px;
+          animation-delay: 2s;
+        }
+
+        .shape-3 {
+           width: 300px;
+           height: 300px;
+           background: rgba(0, 174, 239, 0.05);
+           top: 20%;
+           right: 10%;
+           animation-delay: 4s;
         }
 
         @media (max-width: 768px) {
-          .hero { height: auto; padding: 4rem 0; text-align: center; }
+          .hero { min-height: auto; padding: 6rem 0 4rem; text-align: center; }
           .hero-content { display: flex; flex-direction: column; align-items: center; }
-          h1 { font-size: 2.5rem; }
-          .subtitle { font-size: 1.2rem; }
-          .cta-group { flex-direction: column; width: 100%; }
-          .btn { width: 100%; text-align: center; justify-content: center; display: flex; align-items: center; }
-          .hero-shape { width: 100%; height: 300px; top: -100px; opacity: 0.05; transform: rotate(10deg); }
+          .hero-title { font-size: 3rem; margin-bottom: 1.5rem; }
+          .subtitle { font-size: 1.25rem; margin-bottom: 2rem; }
+          .cta-group { flex-direction: column; width: 100%; gap: 1rem; }
+          .btn { width: 100%; }
         }
       `}</style>
-        </section>
-    );
+    </section>
+  );
 };
 
 export default Hero;

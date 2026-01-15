@@ -54,6 +54,33 @@ ul {
   list-style: none;
 }
 
+/* Global Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
 /* Utilities */
 .container {
   max-width: 1200px;
@@ -65,37 +92,42 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 2rem;
+  padding: 0.85rem 2.5rem;
+  /* Larger Click Area */
   border-radius: 50px;
-  font-weight: 700;
+  font-weight: 800;
+  /* Bolder */
   cursor: pointer;
   border: none;
-  transition: all 0.3s ease;
-  font-size: 1.1rem;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  /* Bouncy transition */
+  font-size: 1.15rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-primary {
-  background-color: var(--color-primary);
+  background: linear-gradient(135deg, var(--color-primary) 0%, #0095cc 100%);
   color: white;
-  box-shadow: 0 4px 6px rgba(0, 174, 239, 0.2);
+  box-shadow: 0 10px 20px -10px rgba(0, 174, 239, 0.5);
+  /* Glow */
 }
 
 .btn-primary:hover {
-  background-color: #0095cc;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(0, 174, 239, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px -10px rgba(0, 174, 239, 0.7);
 }
 
 .btn-accent {
-  background-color: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-accent) 0%, #aebf00 100%);
   color: var(--color-secondary);
-  box-shadow: 0 4px 6px rgba(196, 214, 0, 0.2);
+  box-shadow: 0 10px 20px -10px rgba(196, 214, 0, 0.6);
 }
 
 .btn-accent:hover {
-  background-color: #b3c200;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 12px rgba(196, 214, 0, 0.3);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 15px 30px -10px rgba(196, 214, 0, 0.8);
 }
 
 .section {
@@ -103,18 +135,20 @@ ul {
 }
 
 .section-title {
-  font-size: 2.5rem;
+  font-size: 3rem;
+  /* Bigger Titles */
   font-weight: 900;
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 3.5rem;
   color: var(--color-secondary);
   position: relative;
+  letter-spacing: -1px;
 }
 
 .section-title::after {
   content: '';
   display: block;
-  width: 60px;
+  width: 80px;
   height: 6px;
   background: var(--color-primary);
   margin: 1rem auto 0;
