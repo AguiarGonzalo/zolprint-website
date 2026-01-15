@@ -34,11 +34,9 @@ const Hero = () => {
           display: flex;
           align-items: center;
           overflow: hidden;
+          overflow: hidden;
           /* Seamless Blue Background */
           background-color: #27ace4;
-          background-image: 
-            radial-gradient(at 100% 0%, rgba(255,255,255,0.1) 0px, transparent 50%),
-            radial-gradient(at 0% 100%, rgba(255,255,255,0.1) 0px, transparent 50%);
         }
 
         .hero-content {
@@ -62,7 +60,6 @@ const Hero = () => {
             width: 100%;
             height: auto;
             object-fit: contain;
-            filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
         }
 
 
