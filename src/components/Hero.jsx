@@ -5,10 +5,13 @@ const Hero = () => {
   return (
     <section className="hero">
       <div className="container hero-content">
-        <h1 className="hero-title">
-          כל פתרונות הדפוס<br />
-          <span className="highlight">במקום אחד</span>
-        </h1>
+        <div className="hero-brand">
+          <img
+            src="/hero-banner.png"
+            alt="Zolprint - כל פתרונות הדפוס במקום אחד"
+            className="hero-image"
+          />
+        </div>
         <p className="subtitle">דפוס דיגיטלי, העתקות אור, אופסט ועיצוב גרפי ברמה הגבוהה ביותר.</p>
         <div className="cta-group">
           <a href="#architects" className="btn btn-primary">
@@ -31,11 +34,11 @@ const Hero = () => {
           display: flex;
           align-items: center;
           overflow: hidden;
-          /* Premium Mesh Gradient */
-          background-color: #f8f9fa;
+          /* Seamless Blue Background */
+          background-color: #27ace4;
           background-image: 
-            radial-gradient(at 100% 0%, rgba(0,174,239,0.1) 0px, transparent 50%),
-            radial-gradient(at 0% 100%, rgba(196,214,0,0.15) 0px, transparent 50%);
+            radial-gradient(at 100% 0%, rgba(255,255,255,0.1) 0px, transparent 50%),
+            radial-gradient(at 0% 100%, rgba(255,255,255,0.1) 0px, transparent 50%);
         }
 
         .hero-content {
@@ -66,7 +69,7 @@ const Hero = () => {
 
         .subtitle {
           font-size: 1.6rem;
-          color: #555;
+          color: #ffffff;
           margin-bottom: 3rem;
           max-width: 650px;
           font-weight: 400;
