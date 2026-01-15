@@ -72,7 +72,10 @@ const Hero = () => {
           color: #ffffff;
           margin-bottom: 3rem;
           max-width: 650px;
+          margin-left: auto;
+          margin-right: auto;
           font-weight: 400;
+          text-wrap: balance;
           animation: fadeInUp 0.8s ease-out 0.2s backwards;
         }
 
