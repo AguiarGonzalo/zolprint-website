@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zolprint.co.il/sitemap.xml
